@@ -30,7 +30,7 @@ const tours = [
   {
     id: 'canopy',
     badge: 'SUPER FUN!',
-    image: IMAGES.stMaarten,
+    image: IMAGES.gallery2,
     title: 'CANOPY (ZIP LINE) - HALF DAY PASS',
     duration: '2.5 Hours',
     description: 'Fly through and over the rainforest on the safest and most fun canopy tour in the country and experience first-hand why Costa Rica is the best destination in the world for Adventure and Eco-tourism.',
@@ -58,7 +58,7 @@ const tours = [
   {
     id: 'bird-half',
     badge: null,
-    image: IMAGES.gallery2,
+    image: IMAGES.jaco,
     title: 'BIRD WATCHING TOUR - HALF DAY PASS',
     duration: '4 Hours',
     description: 'Rainforest Adventures has been recognized by the National Audubon Society as one of the best birding spots in Costa Rica. You can spend hours looking for and admiring the majestic species that nest in our rainforest.',
@@ -72,7 +72,7 @@ const tours = [
   {
     id: 'frog',
     badge: null,
-    image: IMAGES.jaco,
+    image: IMAGES.braulioCarrillo,
     title: 'FROG NIGHT TOUR',
     duration: '1 Hour 15 Minutes',
     description: 'Be part of the experience of the nocturnal world of amphibians in the company of our guide. Discover the fascinating creatures that come alive after dark in our rainforest.',
