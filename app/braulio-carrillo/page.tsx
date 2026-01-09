@@ -21,9 +21,11 @@ const tours = [
     duration: '5 Hours',
     description: 'Enjoy the most complete package of eco-adventures in Costa Rica. Enjoy the spectacular Atlantic rainforest, a cable car flight through the treetops and the great excitement of enjoying the safest canopy tour in the area.',
     activities: ['Canopy', 'Aerial Tram', 'Orchid Garden', 'Butterfly Garden', 'Nature Walk', 'Snake and Frog Exhibitions'],
+    services: ['LOCKER', 'FREE PARKING'],
     priceAdult: 109,
     priceKid: 69,
-    time: '8:15am to 4:00pm',
+    requirements: null,
+    openingTime: '8:15am to 4:00pm',
   },
   {
     id: 'canopy',
@@ -33,21 +35,53 @@ const tours = [
     duration: '2.5 Hours',
     description: 'Fly through and over the rainforest on the safest and most fun canopy tour in the country and experience first-hand why Costa Rica is the best destination in the world for Adventure and Eco-tourism.',
     activities: ['Canopy Zip Line', 'Butterfly Garden', 'Orchid Garden', 'Snake and Frog Exhibitions', 'Nature Walk'],
+    services: null,
     priceAdult: 67,
     priceKid: 44,
-    time: 'Zipline times: 08:00am, 10:00am, 2:00pm',
+    requirements: null,
+    openingTime: 'Zipline times: 08:00am, 10:00am, 2:00pm',
   },
   {
-    id: 'bird',
+    id: 'bird-full',
     badge: null,
-    image: IMAGES.jaco,
+    image: IMAGES.gallery1,
     title: 'BIRD WATCHING TOUR - FULL DAY PASS',
     duration: '8 Hours',
-    description: 'Rainforest Adventures has been recognized by the National Audubon Society as one of the best birding spots in Costa Rica. Spend hours admiring the majestic species that nest in our rainforest.',
+    description: 'Rainforest Adventures has been recognized by the National Audubon Society as one of the best birding spots in Costa Rica. You can spend hours looking for and admiring the majestic species that nest in our rainforest.',
     activities: ['Bird Watching', 'Aerial Tram', 'Nature Walk'],
+    services: ['LOCKER', 'FREE PARKING'],
     priceAdult: 95,
     priceKid: null,
-    time: 'Bird Watching Tour: 7:30am',
+    requirements: ['Closed toe shoes required', 'All clients must be present 15 minutes before the confirmed time for the tour.'],
+    openingTime: 'Bird Watching Tour time: at 7:30 am.',
+  },
+  {
+    id: 'bird-half',
+    badge: null,
+    image: IMAGES.gallery2,
+    title: 'BIRD WATCHING TOUR - HALF DAY PASS',
+    duration: '4 Hours',
+    description: 'Rainforest Adventures has been recognized by the National Audubon Society as one of the best birding spots in Costa Rica. You can spend hours looking for and admiring the majestic species that nest in our rainforest.',
+    activities: ['Bird Watching', 'Nature Walk'],
+    services: ['LOCKER', 'FREE PARKING'],
+    priceAdult: 47,
+    priceKid: null,
+    requirements: ['Closed toe shoes required', 'All clients must be present 15 minutes before the confirmed time for the tour.'],
+    openingTime: 'Bird Watching Tour time: at 7:30 am.',
+  },
+  {
+    id: 'frog',
+    badge: null,
+    image: IMAGES.jaco,
+    title: 'FROG NIGHT TOUR',
+    duration: '1 Hour 15 Minutes',
+    description: 'Be part of the experience of the nocturnal world of amphibians in the company of our guide. Discover the fascinating creatures that come alive after dark in our rainforest.',
+    activities: ['Frog Watching', 'Nature Walk'],
+    services: ['LOCKER', 'FREE PARKING'],
+    priceAdult: 38,
+    priceKid: null,
+    requirements: ['Closed toe shoes required', 'All clients must be present 15 minutes before the confirmed time for the tour.'],
+    openingTime: 'Frog Night Tour time: at 6:00 pm.',
   },
 ]
 
@@ -168,8 +202,14 @@ export default function BraulioCarrillo() {
 
               <div className={styles.tourInfo}>
                 <div className={styles.tourHeader}>
-                  <span className={styles.tourLocation}>📍 Braulio Carrillo</span>
-                  <span className={styles.tourDuration}>⏱ {tour.duration}</span>
+                  <span className={styles.tourLocation}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Braulio Carrillo
+                  </span>
+                  <span className={styles.tourDuration}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    {tour.duration}
+                  </span>
                 </div>
                 <h3 className={styles.tourTitle}>{tour.title}</h3>
                 <p className={styles.tourDesc}>{tour.description}</p>
@@ -182,10 +222,22 @@ export default function BraulioCarrillo() {
                     ))}
                   </div>
                 </div>
+
+                {tour.services && (
+                  <div className={styles.tourServices}>
+                    <strong>Optional Services Available:</strong>
+                    <div className={styles.servicesList}>
+                      {tour.services.map((svc, i) => (
+                        <span key={i} className={styles.serviceBadge}>{svc}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className={styles.tourPricing}>
-                <div className={styles.priceLabel}>Price Starting From (USD)</div>
+                <div className={styles.priceLabel}>Price Starting From</div>
+                <div className={styles.priceCurrency}>(USD)</div>
                 <div className={styles.priceMain}>
                   <span className={styles.priceAmount}>${tour.priceAdult}</span>
                   <span className={styles.pricePer}>/Person</span>
@@ -196,7 +248,24 @@ export default function BraulioCarrillo() {
                     <span>/Kid</span>
                   </div>
                 )}
-                <div className={styles.tourTime}>⏰ {tour.time}</div>
+
+                {tour.requirements && (
+                  <div className={styles.tourRequirements}>
+                    {tour.requirements.map((req, i) => (
+                      <div key={i} className={styles.requirement}>
+                        <span className={styles.reqIcon}>ℹ️</span>
+                        <span>{req}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className={styles.tourTime}>
+                  <span className={styles.timeIcon}>⏰</span>
+                  <span className={styles.timeLabel}>OPENING TIME</span>
+                  <span className={styles.timeValue}>{tour.openingTime}</span>
+                </div>
+
                 <button className={styles.bookBtn}>BOOK NOW</button>
                 <button className={styles.moreBtn}>MORE INFO</button>
               </div>
