@@ -734,8 +734,9 @@
 
 /* Stripe Section */
 .stripeSection {
-  padding: 60px 0;
-  background: linear-gradient(135deg, #635bff 0%, #7c3aed 100%);
+  padding: 50px 0;
+  background: var(--color-light);
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 .stripeContent {
@@ -771,57 +772,56 @@
 }
 
 .stripeLogo > span:last-child {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--color-dark);
   letter-spacing: -0.02em;
 }
 
 .stripeTitle {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: white;
-  margin-bottom: 12px;
+  color: var(--color-dark);
+  margin-bottom: 8px;
 }
 
 .stripeDesc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 .stripeFeatures {
   display: flex;
-  gap: 32px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .stripeFeature {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  gap: 12px;
+  padding: 14px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .stripeFeatureIcon {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .stripeFeature h4 {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: white;
+  color: var(--color-dark);
   margin-bottom: 2px;
 }
 
 .stripeFeature p {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
 }
 
 /* Footer */
@@ -1129,4 +1129,39 @@
     gap: 16px;
     text-align: center;
   }
+}
+
+/* WhatsApp Floating Button */
+.whatsappBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.whatsappBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsappBtn svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* Social Icons SVG */
+.heroSocialLink svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
