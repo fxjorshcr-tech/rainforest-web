@@ -156,20 +156,20 @@ export default function Home() {
         <div className="container">
           <div className={styles.tripContent}>
             <div className={styles.tripBadge}>
-              <div className={styles.tripCircle}>
+              <div className={styles.tripCard}>
                 <span className={styles.tripYear}>2019</span>
-                <span className={styles.tripCert}>CERTIFICATE of</span>
-                <span className={styles.tripExc}>EXCELLENCE</span>
+                <span className={styles.tripCert}>Certificate of</span>
+                <span className={styles.tripExc}>Excellence</span>
                 <div className={styles.tripOwl}>
                   <span>●</span><span>●</span>
                 </div>
-              </div>
-              <div className={styles.tripYears}>
-                <span>2015</span>
-                <span>2016</span>
-                <span>HALL of FAME</span>
-                <span>2017</span>
-                <span>2018</span>
+                <div className={styles.tripYears}>
+                  <span>2015</span>
+                  <span>2016</span>
+                  <span>HALL OF FAME</span>
+                  <span>2017</span>
+                  <span>2018</span>
+                </div>
               </div>
             </div>
             <div className={styles.tripInfo}>
@@ -177,11 +177,26 @@ export default function Home() {
                 <span className={styles.tripOwlLogo}>●●</span>
                 <span>trip<strong>advisor</strong></span>
               </div>
-              <p>Certificate of Excellence 2019 Winner</p>
+              <p>Award-Winning Adventures Since 2015</p>
               <p className={styles.tripDesc}>
                 Recognized for consistently delivering outstanding experiences
-                to travelers around the world.
+                to travelers around the world. Our commitment to excellence has
+                earned us a place in the TripAdvisor Hall of Fame.
               </p>
+              <div className={styles.tripStats}>
+                <div className={styles.tripStat}>
+                  <span className={styles.tripStatNumber}>5+</span>
+                  <span className={styles.tripStatLabel}>Years Winner</span>
+                </div>
+                <div className={styles.tripStat}>
+                  <span className={styles.tripStatNumber}>4.8</span>
+                  <span className={styles.tripStatLabel}>Avg Rating</span>
+                </div>
+                <div className={styles.tripStat}>
+                  <span className={styles.tripStatNumber}>10K+</span>
+                  <span className={styles.tripStatLabel}>Reviews</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

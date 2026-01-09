@@ -112,8 +112,14 @@
   z-index: 1;
   text-align: left;
   color: var(--color-white);
-  padding: 80px clamp(40px, 8vw, 120px);
-  max-width: 800px;
+  padding: 50px 60px;
+  max-width: 700px;
+  margin: 0 0 60px clamp(40px, 5vw, 80px);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .heroTitle {
@@ -242,8 +248,9 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 35%,
+    rgba(0, 0, 0, 0.1) 60%,
     transparent 100%
   );
   pointer-events: none;
@@ -253,26 +260,29 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 28px;
+  padding: 32px;
   color: var(--color-white);
 }
 
 .destRegion {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 6px;
+  color: var(--color-dark);
+  background: var(--color-primary);
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
 .destName {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 500;
-  line-height: 1.2;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
 }
 
 /* About Section */
@@ -300,109 +310,160 @@
 
 /* TripAdvisor Section */
 .tripadvisor {
-  padding: 80px 0;
-  background: var(--color-light);
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
 }
 
 .tripContent {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
 .tripBadge {
-  text-align: center;
+  position: relative;
 }
 
-.tripCircle {
-  width: 160px;
-  height: 160px;
-  border: 4px solid #00aa6c;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-  background: white;
+.tripCard {
+  background: linear-gradient(145deg, #00aa6c 0%, #008f5b 100%);
+  border-radius: 24px;
+  padding: 50px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 170, 108, 0.3);
+}
+
+.tripCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .tripYear {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #00aa6c;
+  font-size: 5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 .tripCert {
-  font-size: 0.65rem;
+  display: block;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: #333;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 4px;
 }
 
 .tripExc {
-  font-size: 0.9rem;
+  display: block;
+  font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #00aa6c;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
 }
 
 .tripOwl {
-  margin-top: 8px;
-  font-size: 1.5rem;
-  color: #00aa6c;
-  letter-spacing: 4px;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: 8px;
 }
 
 .tripYears {
   display: flex;
-  gap: 12px;
-  font-size: 0.75rem;
-  color: #666;
-  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
   justify-content: center;
 }
 
-.tripYears span:nth-child(3) {
-  color: #00aa6c;
+.tripYears span {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: 600;
+  color: white;
+}
+
+.tripYears span:nth-child(3) {
+  background: white;
+  color: #00aa6c;
 }
 
 .tripInfo {
-  text-align: center;
+  max-width: 450px;
 }
 
 .tripLogo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 1.5rem;
-  margin-bottom: 12px;
+  gap: 12px;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  color: white;
 }
 
 .tripOwlLogo {
   color: #00aa6c;
-  font-size: 1.8rem;
+  font-size: 3rem;
 }
 
 .tripLogo strong {
-  color: #000;
+  color: white;
 }
 
 .tripInfo > p:first-of-type {
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
   font-weight: 600;
-  color: var(--color-dark);
-  margin-bottom: 8px;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
 }
 
 .tripDesc {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  max-width: 350px;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.tripStats {
+  display: flex;
+  gap: 40px;
+}
+
+.tripStat {
+  text-align: center;
+}
+
+.tripStatNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.tripStatLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
 }
 
 /* Experiences */
@@ -825,13 +886,58 @@
 
   .tripContent {
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
+  }
+
+  .tripCard {
+    padding: 40px 50px;
+  }
+
+  .tripInfo {
+    text-align: center;
+  }
+
+  .tripLogo {
+    justify-content: center;
+  }
+
+  .tripStats {
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   .heroContent {
-    padding: 60px 24px;
+    padding: 30px 24px;
+    margin: 0 16px 30px;
+    max-width: none;
+  }
+
+  .tripCard {
+    padding: 30px 24px;
+  }
+
+  .tripYear {
+    font-size: 3.5rem;
+  }
+
+  .tripYears {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tripYears span {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .tripStats {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .tripStatNumber {
+    font-size: 2rem;
   }
 
   .heroSocial {
