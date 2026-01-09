@@ -14,52 +14,47 @@ const IMAGES = {
 const destinations = [
   {
     id: 'st-maarten',
-    name: 'St. Maarten',
-    country: 'Caribbean',
+    name: 'ST. MAARTEN',
     image: IMAGES.stMaarten,
-    description: 'Experience the thrill of our Caribbean paradise'
+    description: 'Soar above the Caribbean on our world-famous ziplines with stunning ocean views'
   },
   {
     id: 'braulio-carrillo',
-    name: 'Braulio Carrillo',
-    country: 'Costa Rica',
+    name: 'COSTA RICA - BRAULIO CARRILLO',
     image: IMAGES.braulioCarrillo,
-    description: 'Explore the heart of Costa Rican rainforest'
-  },
-  {
-    id: 'panama',
-    name: 'Panamá',
-    country: 'Central America',
-    image: IMAGES.panama,
-    description: 'Discover adventure in the Panama jungle'
+    description: 'Experience the original rainforest aerial tram in pristine cloud forest'
   },
   {
     id: 'jaco',
-    name: 'Jacó',
-    country: 'Costa Rica',
+    name: 'COSTA RICA - JACO BEACH',
     image: IMAGES.jaco,
-    description: 'Pacific coast adventures await you'
+    description: 'Pacific coast adventures combining beach and rainforest experiences'
+  },
+  {
+    id: 'panama',
+    name: 'PANAMA',
+    image: IMAGES.panama,
+    description: 'Discover the biodiversity of Panama\'s tropical rainforests'
   },
   {
     id: 'st-lucia',
-    name: 'St. Lucia',
-    country: 'Caribbean',
+    name: 'ST. LUCIA',
     image: IMAGES.stLucia,
-    description: 'Rainforest adventures in paradise island'
+    description: 'Caribbean adventure paradise with breathtaking Piton views'
   },
 ]
 
 export default function Home() {
   return (
     <>
-      {/* Header */}
+      {/* Header - Transparent & Fixed */}
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a href="#" className={styles.logo}>
             <span className={styles.logoIcon}>🌿</span>
             <div>
               <span className={styles.logoMain}>Rainforest</span>
-              <span className={styles.logoSub}>Adventure</span>
+              <span className={styles.logoSub}>Adventures</span>
             </div>
           </a>
 
@@ -70,7 +65,7 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </nav>
 
-          <a href="#book" className={`btn btn-primary ${styles.headerCta}`}>
+          <a href="#book" className={styles.headerCta}>
             Book Now
           </a>
         </div>
@@ -84,60 +79,51 @@ export default function Home() {
         </div>
 
         <div className={styles.heroContent}>
-          <p className={styles.heroTag}>Welcome to the jungle</p>
           <h1 className={styles.heroTitle}>
-            Adventure<br />
-            <span>Awaits</span>
+            ADVENTURE<br />
+            <span>AWAITS</span>
           </h1>
           <p className={styles.heroDesc}>
-            Experience world-class ziplines, aerial trams, and unforgettable
-            rainforest adventures across the Caribbean and Central America.
+            Featuring locations in the coolest destinations in Central America and the Caribbean.
           </p>
-          <div className={styles.heroButtons}>
-            <a href="#destinations" className="btn btn-primary">
-              Explore Destinations
-            </a>
-            <a href="#experiences" className="btn btn-outline">
-              View Experiences
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.heroScroll}>
-          <span>Scroll to explore</span>
-          <div className={styles.scrollLine} />
+          <a href="#destinations" className={styles.heroBtn}>
+            GO EXPLORING
+          </a>
         </div>
       </section>
 
       {/* Destinations */}
-      <section className={`section ${styles.destinations}`} id="destinations">
+      <section className={styles.destinations} id="destinations">
         <div className="container">
-          <div className={styles.sectionHeader}>
-            <p className={styles.sectionTag}>Our Parks</p>
-            <h2 className="heading-lg">Destinations</h2>
-            <p className={styles.sectionDesc}>
-              Five incredible locations across the Caribbean and Central America,
-              each offering unique adventures in pristine rainforest settings.
-            </p>
-          </div>
+          <h2 className={styles.destinationsTitle}>CHOOSE YOUR DESTINATION</h2>
 
-          <div className={styles.destinationsGrid}>
-            {destinations.map((dest, index) => (
-              <a
-                key={dest.id}
-                href={`#${dest.id}`}
-                className={`${styles.destCard} ${index === 0 ? styles.destCardLarge : ''}`}
-              >
+          {/* Top Row - 2 cards */}
+          <div className={styles.destRowTop}>
+            {destinations.slice(0, 2).map((dest) => (
+              <a key={dest.id} href={`#${dest.id}`} className={styles.destCard}>
                 <div className={styles.destImageWrap}>
-                  <img src={dest.image} alt={dest.name} className={styles.destImage} />
+                  <img src={dest.image} alt={dest.name} />
                 </div>
-                <div className={styles.destContent}>
-                  <span className={styles.destCountry}>{dest.country}</span>
+                <div className={styles.destOverlay}>
+                  <span className={styles.destBadge}>SPECIAL DISCOUNT</span>
                   <h3 className={styles.destName}>{dest.name}</h3>
                   <p className={styles.destDesc}>{dest.description}</p>
-                  <span className={styles.destLink}>
-                    Explore <span>→</span>
-                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Bottom Row - 3 cards */}
+          <div className={styles.destRowBottom}>
+            {destinations.slice(2).map((dest) => (
+              <a key={dest.id} href={`#${dest.id}`} className={styles.destCard}>
+                <div className={styles.destImageWrap}>
+                  <img src={dest.image} alt={dest.name} />
+                </div>
+                <div className={styles.destOverlay}>
+                  <span className={styles.destBadge}>SPECIAL DISCOUNT</span>
+                  <h3 className={styles.destName}>{dest.name}</h3>
+                  <p className={styles.destDesc}>{dest.description}</p>
                 </div>
               </a>
             ))}
@@ -145,13 +131,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className={styles.about} id="about">
+        <div className="container">
+          <h2 className={styles.aboutTitle}>ABOUT RAINFOREST ADVENTURES</h2>
+          <p className={styles.aboutText}>
+            Rainforest Adventures creates unique and memorable adventures that inspire a sustainable
+            use of the environment and appreciation of the local culture while making a positive
+            impact on our communities. Featuring locations in the coolest destinations in Central
+            America and the Caribbean.
+          </p>
+        </div>
+      </section>
+
+      {/* TripAdvisor Section */}
+      <section className={styles.tripadvisor}>
+        <div className="container">
+          <div className={styles.tripContent}>
+            <div className={styles.tripBadge}>
+              <div className={styles.tripCircle}>
+                <span className={styles.tripYear}>2019</span>
+                <span className={styles.tripCert}>CERTIFICATE of</span>
+                <span className={styles.tripExc}>EXCELLENCE</span>
+                <div className={styles.tripOwl}>
+                  <span>●</span><span>●</span>
+                </div>
+              </div>
+              <div className={styles.tripYears}>
+                <span>2015</span>
+                <span>2016</span>
+                <span>HALL of FAME</span>
+                <span>2017</span>
+                <span>2018</span>
+              </div>
+            </div>
+            <div className={styles.tripInfo}>
+              <div className={styles.tripLogo}>
+                <span className={styles.tripOwlLogo}>●●</span>
+                <span>trip<strong>advisor</strong></span>
+              </div>
+              <p>Certificate of Excellence 2019 Winner</p>
+              <p className={styles.tripDesc}>
+                Recognized for consistently delivering outstanding experiences
+                to travelers around the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Experiences */}
-      <section className={`section ${styles.experiences}`} id="experiences">
+      <section className={styles.experiences} id="experiences">
         <div className="container">
           <div className={styles.expGrid}>
             <div className={styles.expContent}>
-              <p className={styles.sectionTag}>What We Offer</p>
-              <h2 className="heading-lg">Unforgettable Experiences</h2>
+              <h2 className={styles.expTitle}>UNFORGETTABLE EXPERIENCES</h2>
               <p className={styles.expDesc}>
                 From adrenaline-pumping ziplines to serene aerial tram rides,
                 our adventures are designed for all skill levels and ages.
@@ -188,7 +222,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <a href="#book" className="btn btn-dark">
+              <a href="#book" className={styles.expBtn}>
                 Book Your Adventure
               </a>
             </div>
@@ -236,9 +270,9 @@ export default function Home() {
           <div className={styles.ctaOverlay} />
         </div>
         <div className={styles.ctaContent}>
-          <h2 className="heading-lg">Ready for Adventure?</h2>
+          <h2>READY FOR ADVENTURE?</h2>
           <p>Book your rainforest experience today and create memories that last a lifetime.</p>
-          <a href="#book" className="btn btn-primary">
+          <a href="#book" className={styles.ctaBtn}>
             Book Now
           </a>
         </div>
@@ -253,7 +287,7 @@ export default function Home() {
                 <span>🌿</span>
                 <div>
                   <span>Rainforest</span>
-                  <span>Adventure</span>
+                  <span>Adventures</span>
                 </div>
               </div>
               <p>
@@ -301,7 +335,7 @@ export default function Home() {
           </div>
 
           <div className={styles.footerBottom}>
-            <p>© 2025 Rainforest Adventure. All rights reserved.</p>
+            <p>© 2025 Rainforest Adventures. All rights reserved.</p>
             <div className={styles.footerBottomLinks}>
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>
