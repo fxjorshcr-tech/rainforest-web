@@ -4,78 +4,81 @@ import styles from './page.module.css'
 
 const VIDEO_URL = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Video_de_Tren_en_Bosques_Costarricenses.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL1ZpZGVvX2RlX1RyZW5fZW5fQm9zcXVlc19Db3N0YXJyaWNlbnNlcy5tcDQiLCJpYXQiOjE3Njc5OTMzMjMsImV4cCI6MTc5OTUyOTMyM30.oLocALyHX6aouQT1IZxfT9l-44lvXnnUbqnbq-6Xsx0'
 
+const IMAGES = {
+  braulioCarrillo: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_ffc13effc13effc1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZmZjMTNlZmZjMTNlZmZjMS5wbmciLCJpYXQiOjE3Njc5OTAyMTksImV4cCI6MTc5OTUyNjIxOX0.PNFoxQrn56Q0QxpRIE6E-NSQwKVMwpIl6nTKFLUCSb8',
+  jaco: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_x8fc74x8fc74x8fc.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfeDhmYzc0eDhmYzc0eDhmYy5wbmciLCJpYXQiOjE3Njc5OTAzNDEsImV4cCI6MTc5OTUyNjM0MX0.QDCsJK53Wwcom43-6rTsmYim5FVc2CyDAPDfvsPOMJU',
+  stMaarten: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_qtlr8hqtlr8hqtlr.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfcXRscjhocXRscjhocXRsci5wbmciLCJpYXQiOjE3Njc5ODk5NzUsImV4cCI6MTc5OTUyNTk3NX0.sAzAbP7JpjBvIJNdNlS0wPUuUyWhZLCu3H383YJ5L3g',
+  gallery1: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_i34zzii34zzii34z.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfaTM0enppaTM0enppaTM0ei5wbmciLCJpYXQiOjE3Njc5OTA3MjMsImV4cCI6MTc5OTUyNjcyM30.Z8LPk0MA1LdZ-7Bow2Eq3m06eq5_Ag6Voa0Y3icjFWU',
+  gallery2: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_yc787jyc787jyc78.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfeWM3ODdqeWM3ODdqeWM3OC5wbmciLCJpYXQiOjE3Njc5OTA4NjgsImV4cCI6MTc5OTUyNjg2OH0.eUwSdLR7eVSXzKaGQWhH5ro9w4WseHDUVHM2pNUhb2s',
+}
+
 const tours = [
   {
     id: '6in1',
     badge: 'BEST SELLER',
-    badgeColor: '#f7931e',
+    image: IMAGES.braulioCarrillo,
     title: '6 IN 1 TOUR - FULL DAY PASS',
     duration: '5 Hours',
     description: 'Enjoy the most complete package of eco-adventures in Costa Rica. Enjoy the spectacular Atlantic rainforest, a cable car flight through the treetops and the great excitement of enjoying the safest canopy tour in the area.',
     activities: ['Canopy', 'Aerial Tram', 'Orchid Garden', 'Butterfly Garden', 'Nature Walk', 'Snake and Frog Exhibitions'],
-    services: ['Free Parking'],
     priceAdult: 109,
     priceKid: 69,
-    notes: ['Closed toe shoes required', 'To take zip line tour you must be in good physical condition'],
-    time: '8:15am to 4:00pm (visitor must enter the park at 2:00pm the latest). 6 in 1 tour time: at 10:00am.',
+    time: '8:15am to 4:00pm',
   },
   {
     id: 'canopy',
     badge: 'SUPER FUN!',
-    badgeColor: '#f7931e',
+    image: IMAGES.stMaarten,
     title: 'CANOPY (ZIP LINE) - HALF DAY PASS',
     duration: '2.5 Hours',
     description: 'Fly through and over the rainforest on the safest and most fun canopy tour in the country and experience first-hand why Costa Rica is the best destination in the world for Adventure and Eco-tourism.',
     activities: ['Canopy Zip Line', 'Butterfly Garden', 'Orchid Garden', 'Snake and Frog Exhibitions', 'Nature Walk'],
-    services: ['Free Parking'],
     priceAdult: 67,
     priceKid: 44,
-    notes: ['Closed toe shoes required', 'To take zip line tour you must be in good physical condition'],
-    time: 'Zipline times: at 08:00am, 10:00am and at 2:00pm. All clients must be present 15 minutes before the confirmed time for the tour.',
+    time: 'Zipline times: 08:00am, 10:00am, 2:00pm',
   },
   {
     id: 'bird',
     badge: null,
-    badgeColor: null,
+    image: IMAGES.jaco,
     title: 'BIRD WATCHING TOUR - FULL DAY PASS',
     duration: '8 Hours',
-    description: 'Rainforest Adventures has been recognized by the National Audubon Society as one of the best birding spots in Costa Rica. You can spend hours looking for and admiring the majestic species that nest in our rainforest.',
+    description: 'Rainforest Adventures has been recognized by the National Audubon Society as one of the best birding spots in Costa Rica. Spend hours admiring the majestic species that nest in our rainforest.',
     activities: ['Bird Watching', 'Aerial Tram', 'Nature Walk'],
-    services: ['Locker', 'Free Parking'],
     priceAdult: 95,
     priceKid: null,
-    notes: ['Closed toe shoes required', 'All clients must be present 15 minutes before the confirmed time for the tour'],
-    time: 'Bird Watching Tour time: at 7:30 am.',
+    time: 'Bird Watching Tour: 7:30am',
   },
 ]
 
 const reviews = [
-  { name: 'Maria Garcia', rating: 5, text: 'Incredible experience! The aerial tram ride through the rainforest was breathtaking. Our guide was very knowledgeable about the local wildlife.', date: '2 weeks ago' },
-  { name: 'John Smith', rating: 5, text: 'Best zipline adventure ever! The staff was professional and made sure we felt safe throughout. Highly recommend the 6-in-1 package.', date: '1 month ago' },
-  { name: 'Ana Rodriguez', rating: 5, text: 'A must-do in Costa Rica! The butterfly garden was magical and the views from the canopy were unbelievable. Will definitely come back!', date: '3 weeks ago' },
-  { name: 'Michael Johnson', rating: 4, text: 'Great family outing. Kids loved the snake and frog exhibitions. The only reason for 4 stars is the wait time, but totally worth it.', date: '1 month ago' },
-  { name: 'Sophie Martin', rating: 5, text: 'Exceeded all expectations! The bird watching tour was amazing - we spotted toucans and quetzals. Our guide knew every species.', date: '2 months ago' },
-  { name: 'Carlos Mendez', rating: 5, text: 'Pura vida! This is the real Costa Rica experience. The rainforest is pristine and the activities are well organized. 10/10!', date: '1 week ago' },
-  { name: 'Emma Wilson', rating: 5, text: 'The aerial tram gave us views we\'ll never forget. Saw monkeys, sloths, and countless birds. Staff was incredibly friendly.', date: '3 weeks ago' },
-  { name: 'David Lee', rating: 4, text: 'Fun adventure for the whole family. The ziplines were thrilling and safe. Great value for money with the full day pass.', date: '1 month ago' },
-  { name: 'Isabella Torres', rating: 5, text: 'Absolutely stunning! The orchid garden was beautiful and the nature walk was peaceful. Perfect escape from the city.', date: '2 weeks ago' },
-  { name: 'James Brown', rating: 5, text: 'One of the highlights of our Costa Rica trip! Professional staff, beautiful scenery, and unforgettable memories. Highly recommend!', date: '1 month ago' },
+  { name: 'Jaron Brown', initial: 'J', color: '#8B4513', rating: 5, text: 'Pablo is the best! So knowledgeable about the area and safe and...', date: '1 day ago' },
+  { name: 'Kel Koh', initial: 'K', color: '#2196F3', rating: 5, text: 'Absolute first class private transportation service company. We...', date: '1 day ago' },
+  { name: 'Jorge Salas O...', initial: 'J', color: '#FF5722', rating: 5, text: 'Diego and his company was just amazing. Very...', date: '3 days ago' },
+  { name: 'Katherine Jon...', initial: 'K', color: '#FF5722', rating: 5, text: 'Our experience with Diego & his team was exceptional from start...', date: '3 days ago' },
+  { name: 'Srikanth Ragh...', initial: 'S', color: '#4CAF50', rating: 5, text: 'Diego Salas and his team made our trip to Costa Rica seamless...', date: '6 days ago' },
+  { name: 'Maria Garcia', initial: 'M', color: '#9C27B0', rating: 5, text: 'Incredible experience! The aerial tram ride through the rainforest was breathtaking...', date: '1 week ago' },
+  { name: 'John Smith', initial: 'J', color: '#3F51B5', rating: 5, text: 'Best zipline adventure ever! The staff was professional and made sure we felt safe...', date: '2 weeks ago' },
+  { name: 'Ana Rodriguez', initial: 'A', color: '#E91E63', rating: 5, text: 'A must-do in Costa Rica! The butterfly garden was magical and the views...', date: '2 weeks ago' },
+  { name: 'Michael Johnson', initial: 'M', color: '#009688', rating: 4, text: 'Great family outing. Kids loved the snake and frog exhibitions...', date: '3 weeks ago' },
+  { name: 'Sophie Martin', initial: 'S', color: '#FF9800', rating: 5, text: 'Exceeded all expectations! The bird watching tour was amazing...', date: '1 month ago' },
 ]
 
 export default function BraulioCarrillo() {
-  const [currentReview, setCurrentReview] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const visibleReviews = 5
 
-  const nextReview = () => {
-    setCurrentReview((prev) => (prev + 1) % reviews.length)
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % (reviews.length - visibleReviews + 1))
   }
 
-  const prevReview = () => {
-    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length)
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + (reviews.length - visibleReviews + 1)) % (reviews.length - visibleReviews + 1))
   }
 
   return (
     <>
-      {/* Header */}
+      {/* Header - Sticky with Blur */}
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a href="/" className={styles.logo}>
@@ -105,7 +108,7 @@ export default function BraulioCarrillo() {
         </div>
       </header>
 
-      {/* Hero with Video */}
+      {/* Hero with Video - Text Bottom Left */}
       <section className={styles.hero}>
         <div className={styles.heroVideo}>
           <video autoPlay muted loop playsInline>
@@ -115,9 +118,12 @@ export default function BraulioCarrillo() {
         </div>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>
-            BRAULIO CARRILLO PARK<br />
+            BRAULIO CARRILLO<br />
             <span>COSTA RICA</span>
           </h1>
+          <p className={styles.heroDesc}>
+            Experience the most spectacular Atlantic rainforest adventures in Costa Rica.
+          </p>
         </div>
       </section>
 
@@ -155,13 +161,9 @@ export default function BraulioCarrillo() {
             <div key={tour.id} className={styles.tourCard}>
               <div className={styles.tourImage}>
                 {tour.badge && (
-                  <div className={styles.tourBadge} style={{ background: tour.badgeColor }}>
-                    {tour.badge}
-                  </div>
+                  <div className={styles.tourBadge}>{tour.badge}</div>
                 )}
-                <div className={styles.tourImagePlaceholder}>
-                  <span>Tour Image</span>
-                </div>
+                <img src={tour.image} alt={tour.title} />
               </div>
 
               <div className={styles.tourInfo}>
@@ -176,49 +178,25 @@ export default function BraulioCarrillo() {
                   <strong>Activities:</strong>
                   <div className={styles.activityList}>
                     {tour.activities.map((act, i) => (
-                      <span key={i} className={styles.activity}>
-                        <span className={styles.activityCheck}>✓</span>
-                        {act}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className={styles.tourServices}>
-                  <strong>Optional Services Available:</strong>
-                  <div className={styles.serviceList}>
-                    {tour.services.map((srv, i) => (
-                      <span key={i} className={styles.service}>{srv}</span>
+                      <span key={i} className={styles.activity}>✓ {act}</span>
                     ))}
                   </div>
                 </div>
               </div>
 
               <div className={styles.tourPricing}>
-                <div className={styles.priceHeader}>Price Starting From</div>
-                <div className={styles.priceCurrency}>(USD)</div>
+                <div className={styles.priceLabel}>Price Starting From (USD)</div>
                 <div className={styles.priceMain}>
                   <span className={styles.priceAmount}>${tour.priceAdult}</span>
                   <span className={styles.pricePer}>/Person</span>
                 </div>
                 {tour.priceKid && (
                   <div className={styles.priceKid}>
-                    <span className={styles.priceAmount}>${tour.priceKid}</span>
-                    <span className={styles.pricePer}>/Kid</span>
+                    <span>${tour.priceKid}</span>
+                    <span>/Kid</span>
                   </div>
                 )}
-
-                <div className={styles.tourNotes}>
-                  {tour.notes.map((note, i) => (
-                    <p key={i}>ℹ️ {note}</p>
-                  ))}
-                </div>
-
-                <div className={styles.tourTime}>
-                  <strong>⏰ OPENING TIME</strong>
-                  <p>{tour.time}</p>
-                </div>
-
+                <div className={styles.tourTime}>⏰ {tour.time}</div>
                 <button className={styles.bookBtn}>BOOK NOW</button>
                 <button className={styles.moreBtn}>MORE INFO</button>
               </div>
@@ -227,47 +205,139 @@ export default function BraulioCarrillo() {
         </div>
       </section>
 
-      {/* Reviews Carousel */}
-      <section className={styles.reviews}>
-        <div className={styles.reviewsContent}>
-          <div className={styles.reviewsImage}>
-            <div className={styles.slothPlaceholder}>🦥</div>
-          </div>
-          <div className={styles.reviewsCarousel}>
-            <h2 className={styles.reviewsTitle}>TESTIMONIALS</h2>
+      {/* Google Reviews Section */}
+      <section className={styles.reviewsSection}>
+        <div className="container">
+          <h2 className={styles.reviewsTitle}>What Our Customers Say</h2>
 
-            <div className={styles.reviewCard}>
-              <p className={styles.reviewText}>"{reviews[currentReview].text}"</p>
-              <div className={styles.reviewAuthor}>
-                <div className={styles.reviewStars}>
-                  {'★'.repeat(reviews[currentReview].rating)}{'☆'.repeat(5 - reviews[currentReview].rating)}
-                </div>
-                <span className={styles.reviewName}>{reviews[currentReview].name}</span>
-                <span className={styles.reviewDate}>{reviews[currentReview].date}</span>
-              </div>
+          <div className={styles.googleHeader}>
+            <div className={styles.googleLogo}>
+              <span className={styles.googleG}>G</span>oogle <span className={styles.reviewsWord}>Reviews</span>
             </div>
+            <div className={styles.googleRating}>
+              <span className={styles.ratingNumber}>5.0</span>
+              <span className={styles.ratingStars}>★★★★★</span>
+              <span className={styles.ratingCount}>(152)</span>
+            </div>
+            <a href="#" className={styles.reviewBtn}>Review us on Google</a>
+          </div>
 
-            <div className={styles.reviewNav}>
-              <button onClick={prevReview} className={styles.reviewNavBtn}>‹</button>
-              <div className={styles.reviewDots}>
-                {reviews.map((_, i) => (
-                  <span
-                    key={i}
-                    className={`${styles.reviewDot} ${i === currentReview ? styles.reviewDotActive : ''}`}
-                    onClick={() => setCurrentReview(i)}
-                  />
+          <div className={styles.reviewsCarousel}>
+            <button onClick={prevSlide} className={styles.carouselBtn}>‹</button>
+
+            <div className={styles.reviewsTrack}>
+              <div
+                className={styles.reviewsSlider}
+                style={{ transform: `translateX(-${currentSlide * (100 / visibleReviews)}%)` }}
+              >
+                {reviews.map((review, i) => (
+                  <div key={i} className={styles.reviewCard}>
+                    <div className={styles.reviewHeader}>
+                      <div className={styles.reviewAvatar} style={{ background: review.color }}>
+                        {review.initial}
+                        <span className={styles.googleBadge}>G</span>
+                      </div>
+                      <div className={styles.reviewMeta}>
+                        <span className={styles.reviewName}>{review.name} ✓</span>
+                        <span className={styles.reviewDate}>{review.date}</span>
+                      </div>
+                    </div>
+                    <div className={styles.reviewStars}>★★★★★</div>
+                    <p className={styles.reviewText}>{review.text}</p>
+                    <a href="#" className={styles.readMore}>Read more</a>
+                  </div>
                 ))}
               </div>
-              <button onClick={nextReview} className={styles.reviewNavBtn}>›</button>
             </div>
 
-            <div className={styles.googleBadge}>
-              <span className={styles.googleIcon}>G</span>
-              <span>Google Reviews</span>
-            </div>
+            <button onClick={nextSlide} className={styles.carouselBtn}>›</button>
+          </div>
+
+          <div className={styles.carouselDots}>
+            {Array.from({ length: reviews.length - visibleReviews + 1 }).map((_, i) => (
+              <span
+                key={i}
+                className={`${styles.dot} ${i === currentSlide ? styles.dotActive : ''}`}
+                onClick={() => setCurrentSlide(i)}
+              />
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className={styles.footer}>
+        <div className="container">
+          <div className={styles.footerGrid}>
+            <div className={styles.footerBrand}>
+              <div className={styles.footerLogo}>
+                <span>🌿</span>
+                <div>
+                  <span>Rainforest</span>
+                  <span>Adventures</span>
+                </div>
+              </div>
+              <p>
+                World-class eco-adventures in the most beautiful
+                rainforest destinations across the Caribbean and Central America.
+              </p>
+              <div className={styles.socialLinks}>
+                <a href="#">
+                  <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#">
+                  <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                </a>
+                <a href="#">
+                  <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.footerLinks}>
+              <h4>Destinations</h4>
+              <ul>
+                <li><a href="#">St. Maarten</a></li>
+                <li><a href="/braulio-carrillo">Braulio Carrillo</a></li>
+                <li><a href="#">Panama</a></li>
+                <li><a href="#">Jaco</a></li>
+                <li><a href="#">St. Lucia</a></li>
+              </ul>
+            </div>
+
+            <div className={styles.footerLinks}>
+              <h4>Experiences</h4>
+              <ul>
+                <li><a href="#">Canopy Ziplines</a></li>
+                <li><a href="#">Aerial Tram</a></li>
+                <li><a href="#">Hanging Bridges</a></li>
+                <li><a href="#">Wildlife Tours</a></li>
+                <li><a href="#">Night Tours</a></li>
+              </ul>
+            </div>
+
+            <div className={styles.footerLinks}>
+              <h4>Contact</h4>
+              <ul>
+                <li>info@rainforestadventure.com</li>
+                <li>+1 (888) 555-0123</li>
+                <li>Mon - Sun: 7AM - 5PM</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={styles.footerBottom}>
+            <p>© 2025 Rainforest Adventures. All rights reserved.</p>
+            <div className={styles.footerBottomLinks}>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       {/* WhatsApp Button */}
       <a href="https://wa.me/18885550123" target="_blank" rel="noopener noreferrer" className={styles.whatsappBtn}>
