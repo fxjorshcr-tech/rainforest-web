@@ -732,6 +732,98 @@
   color: white;
 }
 
+/* Stripe Section */
+.stripeSection {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #635bff 0%, #7c3aed 100%);
+}
+
+.stripeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.stripeInfo {
+  max-width: 400px;
+}
+
+.stripeLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stripeS {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #635bff;
+}
+
+.stripeLogo > span:last-child {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.stripeTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.stripeDesc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+.stripeFeatures {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.stripeFeature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stripeFeatureIcon {
+  font-size: 1.5rem;
+}
+
+.stripeFeature h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.stripeFeature p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* Footer */
 .footer {
   background: var(--color-darker);
@@ -904,6 +996,22 @@
   .tripStats {
     justify-content: center;
   }
+
+  .stripeContent {
+    justify-content: center;
+  }
+
+  .stripeInfo {
+    text-align: center;
+  }
+
+  .stripeLogo {
+    justify-content: center;
+  }
+
+  .stripeFeatures {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -911,6 +1019,21 @@
     padding: 30px 24px;
     margin: 0 16px 30px;
     max-width: none;
+  }
+
+  .stripeContent {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .stripeFeatures {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .stripeFeature {
+    justify-content: center;
   }
 
   .tripCard {

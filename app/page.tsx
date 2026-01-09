@@ -297,11 +297,47 @@ export default function Home() {
           <a href="#book" className={styles.ctaBtn}>
             Book Now
           </a>
-          <div className={styles.paymentInfo}>
-            <span className={styles.stripeBadge}>
-              <span className={styles.stripeIcon}>S</span>
-              Secure payments via Stripe
-            </span>
+        </div>
+      </section>
+
+      {/* Stripe Payment Section */}
+      <section className={styles.stripeSection}>
+        <div className="container">
+          <div className={styles.stripeContent}>
+            <div className={styles.stripeInfo}>
+              <div className={styles.stripeLogo}>
+                <span className={styles.stripeS}>S</span>
+                <span>stripe</span>
+              </div>
+              <h3 className={styles.stripeTitle}>Secure & Easy Payments</h3>
+              <p className={styles.stripeDesc}>
+                We use Stripe for all transactions, ensuring your payment information
+                is always safe and encrypted with industry-leading security standards.
+              </p>
+            </div>
+            <div className={styles.stripeFeatures}>
+              <div className={styles.stripeFeature}>
+                <span className={styles.stripeFeatureIcon}>🔒</span>
+                <div>
+                  <h4>256-bit Encryption</h4>
+                  <p>Bank-level security</p>
+                </div>
+              </div>
+              <div className={styles.stripeFeature}>
+                <span className={styles.stripeFeatureIcon}>💳</span>
+                <div>
+                  <h4>All Cards Accepted</h4>
+                  <p>Visa, Mastercard, Amex</p>
+                </div>
+              </div>
+              <div className={styles.stripeFeature}>
+                <span className={styles.stripeFeatureIcon}>✓</span>
+                <div>
+                  <h4>Instant Confirmation</h4>
+                  <p>Receive tickets by email</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
