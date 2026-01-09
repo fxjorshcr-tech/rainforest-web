@@ -81,8 +81,8 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
@@ -110,10 +110,10 @@
 .heroContent {
   position: relative;
   z-index: 1;
-  text-align: center;
+  text-align: left;
   color: var(--color-white);
-  padding: 20px;
-  max-width: 900px;
+  padding: 80px clamp(40px, 8vw, 120px);
+  max-width: 800px;
 }
 
 .heroTitle {
@@ -131,11 +131,11 @@
 }
 
 .heroDesc {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   opacity: 0.95;
-  max-width: 600px;
-  margin: 0 auto 40px;
+  max-width: 500px;
+  margin: 0 0 32px;
 }
 
 .heroBtn {
@@ -161,7 +161,7 @@
 .heroSocial {
   position: absolute;
   bottom: 40px;
-  left: 40px;
+  right: 40px;
   display: flex;
   gap: 12px;
   z-index: 2;
@@ -830,9 +830,13 @@
 }
 
 @media (max-width: 768px) {
+  .heroContent {
+    padding: 60px 24px;
+  }
+
   .heroSocial {
     bottom: 20px;
-    left: 20px;
+    right: 20px;
   }
 
   .heroSocialLink {
