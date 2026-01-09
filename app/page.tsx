@@ -3,8 +3,10 @@ import styles from './page.module.css'
 const IMAGES = {
   hero: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_t7oyaht7oyaht7oy.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfdDdveWFodDdveWFodDdveS5wbmciLCJpYXQiOjE3Njc5ODk3MDQsImV4cCI6MTc5OTUyNTcwNH0.FcNzx1q5Q4Pyr-JTDzQLWHOseQUI4bpsOzV9f635V00',
   stMaarten: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_qtlr8hqtlr8hqtlr.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfcXRscjhocXRscjhocXRsci5wbmciLCJpYXQiOjE3Njc5ODk5NzUsImV4cCI6MTc5OTUyNTk3NX0.sAzAbP8JpjBvIJNdNlS0wPUuUyWhZLCu3H383YJ5L3g',
-  braulioCarrillo: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_v1m2hvv1m2hvv1m2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfdjFtMmh2djFtMmh2djFtMi5wbmciLCJpYXQiOjE3Njc5OTAxMDksImV4cCI6MTc5OTUyNjEwOX0.wHUVFRvfXKZtVL-Falrake2bWhmOVVDfy1mNRgMlLjY',
-  panama: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_ffc13effc13effc1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZmZjMTNlZmZjMTNlZmZjMS5wbmciLCJpYXQiOjE3Njc5OTAyMTksImV4cCI6MTc5OTUyNjIxOX0.PNFoxQrn56Q0QxpRIE6E-NSQwKVMwpIl6nTKFLUCSb8',
+  // Intercambiado: el teleférico es Braulio Carrillo
+  braulioCarrillo: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_ffc13effc13effc1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZmZjMTNlZmZjMTNlZmZjMS5wbmciLCJpYXQiOjE3Njc5OTAyMTksImV4cCI6MTc5OTUyNjIxOX0.PNFoxQrn56Q0QxpRIE6E-NSQwKVMwpIl6nTKFLUCSb8',
+  // Intercambiado: la canoa es Panama
+  panama: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_v1m2hvv1m2hvv1m2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfdjFtMmh2djFtMmh2djFtMi5wbmciLCJpYXQiOjE3Njc5OTAxMDksImV4cCI6MTc5OTUyNjEwOX0.wHUVFRvfXKZtVL-Falrake2bWhmOVVDfy1mNRgMlLjY',
   jaco: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_x8fc74x8fc74x8fc.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfeDhmYzc0eDhmYzc0eDhmYy5wbmciLCJpYXQiOjE3Njc5OTAzNDEsImV4cCI6MTc5OTUyNjM0MX0.QDCsJK53Wwcom43-6rTsmYim5FVc2CyDAPDfvsPOMJU',
   stLucia: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_hsdf30hsdf30hsdf.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfaHNkZjMwaHNkZjMwaHNkZi5wbmciLCJpYXQiOjE3Njc5OTA0ODIsImV4cCI6MTc5OTUyNjQ4Mn0.ctOLSXPIrBhyPSdoOG0PFzWTqNg0Pnzu67X_0739FiM',
   gallery1: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_i34zzii34zzii34z.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfaTM0enppaTM0enppaTM0ei5wbmciLCJpYXQiOjE3Njc5OTA3MjMsImV4cCI6MTc5OTUyNjcyM30.Z8LPk0MA1LdZ-7Bow2Eq3m06eq5_Ag6Voa0Y3icjFWU',
@@ -14,33 +16,33 @@ const IMAGES = {
 const destinations = [
   {
     id: 'st-maarten',
-    name: 'ST. MAARTEN',
+    name: 'St. Maarten',
+    region: 'Caribbean',
     image: IMAGES.stMaarten,
-    description: 'Soar above the Caribbean on our world-famous ziplines with stunning ocean views'
   },
   {
     id: 'braulio-carrillo',
-    name: 'COSTA RICA - BRAULIO CARRILLO',
+    name: 'Braulio Carrillo',
+    region: 'Costa Rica',
     image: IMAGES.braulioCarrillo,
-    description: 'Experience the original rainforest aerial tram in pristine cloud forest'
   },
   {
     id: 'jaco',
-    name: 'COSTA RICA - JACO BEACH',
+    name: 'Jaco Beach',
+    region: 'Costa Rica',
     image: IMAGES.jaco,
-    description: 'Pacific coast adventures combining beach and rainforest experiences'
   },
   {
     id: 'panama',
-    name: 'PANAMA',
+    name: 'Panama',
+    region: 'Central America',
     image: IMAGES.panama,
-    description: 'Discover the biodiversity of Panama\'s tropical rainforests'
   },
   {
     id: 'st-lucia',
-    name: 'ST. LUCIA',
+    name: 'St. Lucia',
+    region: 'Caribbean',
     image: IMAGES.stLucia,
-    description: 'Caribbean adventure paradise with breathtaking Piton views'
   },
 ]
 
@@ -64,10 +66,6 @@ export default function Home() {
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
-
-          <a href="#book" className={styles.headerCta}>
-            Book Now
-          </a>
         </div>
       </header>
 
@@ -101,13 +99,11 @@ export default function Home() {
           <div className={styles.destRowTop}>
             {destinations.slice(0, 2).map((dest) => (
               <a key={dest.id} href={`#${dest.id}`} className={styles.destCard}>
-                <div className={styles.destImageWrap}>
-                  <img src={dest.image} alt={dest.name} />
-                </div>
-                <div className={styles.destOverlay}>
-                  <span className={styles.destBadge}>SPECIAL DISCOUNT</span>
+                <img src={dest.image} alt={dest.name} className={styles.destImage} />
+                <div className={styles.destGradient} />
+                <div className={styles.destInfo}>
+                  <span className={styles.destRegion}>{dest.region}</span>
                   <h3 className={styles.destName}>{dest.name}</h3>
-                  <p className={styles.destDesc}>{dest.description}</p>
                 </div>
               </a>
             ))}
@@ -117,13 +113,11 @@ export default function Home() {
           <div className={styles.destRowBottom}>
             {destinations.slice(2).map((dest) => (
               <a key={dest.id} href={`#${dest.id}`} className={styles.destCard}>
-                <div className={styles.destImageWrap}>
-                  <img src={dest.image} alt={dest.name} />
-                </div>
-                <div className={styles.destOverlay}>
-                  <span className={styles.destBadge}>SPECIAL DISCOUNT</span>
+                <img src={dest.image} alt={dest.name} className={styles.destImage} />
+                <div className={styles.destGradient} />
+                <div className={styles.destInfo}>
+                  <span className={styles.destRegion}>{dest.region}</span>
                   <h3 className={styles.destName}>{dest.name}</h3>
-                  <p className={styles.destDesc}>{dest.description}</p>
                 </div>
               </a>
             ))}
