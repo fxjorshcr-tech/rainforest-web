@@ -88,6 +88,19 @@ export default function Home() {
             GO EXPLORING
           </a>
         </div>
+
+        {/* Social Icons */}
+        <div className={styles.heroSocial}>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.heroSocialLink} title="Facebook">
+            FB
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.heroSocialLink} title="Instagram">
+            IG
+          </a>
+          <a href="https://tripadvisor.com" target="_blank" rel="noopener noreferrer" className={styles.heroSocialLink} title="TripAdvisor">
+            TA
+          </a>
+        </div>
       </section>
 
       {/* Destinations */}
@@ -269,6 +282,12 @@ export default function Home() {
           <a href="#book" className={styles.ctaBtn}>
             Book Now
           </a>
+          <div className={styles.paymentInfo}>
+            <span className={styles.stripeBadge}>
+              <span className={styles.stripeIcon}>S</span>
+              Secure payments via Stripe
+            </span>
+          </div>
         </div>
       </section>
 
