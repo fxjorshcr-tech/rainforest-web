@@ -76,6 +76,83 @@
   width: 100%;
 }
 
+/* Dropdown */
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.dropdownArrow {
+  font-size: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  padding: 12px 0;
+  margin-top: 15px;
+  z-index: 100;
+}
+
+.navItem:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dropdown a:hover {
+  background: var(--color-light);
+  color: var(--color-green);
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -112,36 +189,32 @@
   z-index: 1;
   text-align: left;
   color: var(--color-white);
-  padding: 50px 60px;
-  max-width: 700px;
-  margin: 0 0 60px clamp(40px, 5vw, 80px);
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 0 80px clamp(40px, 5vw, 80px);
 }
 
 .heroTitle {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 7rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 600;
-  line-height: 1;
-  margin-bottom: 24px;
-  text-shadow: 2px 4px 20px rgba(0,0,0,0.4);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
 }
 
 .heroTitle span {
   color: var(--color-primary);
   font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
 }
 
 .heroDesc {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  opacity: 0.95;
-  max-width: 500px;
-  margin: 0 0 32px;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 450px;
+  margin: 0 0 28px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 .heroBtn {
@@ -1016,9 +1089,13 @@
 
 @media (max-width: 768px) {
   .heroContent {
-    padding: 30px 24px;
-    margin: 0 16px 30px;
+    padding: 20px;
+    margin: 0 0 40px 20px;
     max-width: none;
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
   .stripeContent {

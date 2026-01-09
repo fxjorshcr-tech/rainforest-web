@@ -61,7 +61,18 @@ export default function Home() {
           </a>
 
           <nav className={styles.nav}>
-            <a href="#destinations">Destinations</a>
+            <div className={styles.navItem}>
+              <span className={styles.navLink}>
+                Destinations <span className={styles.dropdownArrow}>▼</span>
+              </span>
+              <div className={styles.dropdown}>
+                <a href="#">St. Maarten</a>
+                <a href="#">St. Lucia</a>
+                <a href="/braulio-carrillo">Costa Rica - Braulio Carrillo</a>
+                <a href="#">Costa Rica - Jaco Beach</a>
+                <a href="#">Panama</a>
+              </div>
+            </div>
             <a href="#experiences">Experiences</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>

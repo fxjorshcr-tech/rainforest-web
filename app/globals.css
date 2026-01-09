@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --color-primary: #e85d04;
-  --color-primary-light: #f48c06;
+  --color-primary: #f7931e;
+  --color-primary-light: #ffb347;
+  --color-green: #1B5E20;
+  --color-green-light: #2E7D32;
+  --color-green-vibrant: #4CAF50;
   --color-dark: #0a0a0a;
   --color-darker: #050505;
   --color-text: #1a1a1a;
   --color-text-muted: #6b6b6b;
-  --color-light: #fafafa;
+  --color-light: #f0f7f0;
   --color-white: #ffffff;
-  --color-accent: #2d6a4f;
+  --color-accent: #1B5E20;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, sans-serif;
