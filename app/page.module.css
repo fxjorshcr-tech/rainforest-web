@@ -30,6 +30,13 @@
   font-size: 2rem;
 }
 
+.logoImg {
+  height: 46px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
 .logoMain {
   display: block;
   font-family: var(--font-display);
@@ -925,6 +932,13 @@
 
 .footerLogo > span:first-child {
   font-size: 2rem;
+}
+
+.footerLogoImg {
+  height: 52px;
+  width: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .footerLogo > div {

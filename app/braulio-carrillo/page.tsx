@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import styles from './page.module.css'
 
-const VIDEO_URL = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Video_de_Tren_en_Bosques_Costarricenses.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL1ZpZGVvX2RlX1RyZW5fZW5fQm9zcXVlc19Db3N0YXJyaWNlbnNlcy5tcDQiLCJpYXQiOjE3Njc5OTMzMjMsImV4cCI6MTc5OTUyOTMyM30.oLocALyHX6aouQT1IZxfT9l-44lvXnnUbqnbq-6Xsx0'
+const LOGO = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/rain-forest-logo-transp.png'
 
 const IMAGES = {
   braulioCarrillo: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_ffc13effc13effc1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZmZjMTNlZmZjMTNlZmZjMS5wbmciLCJpYXQiOjE3Njc5OTAyMTksImV4cCI6MTc5OTUyNjIxOX0.PNFoxQrn56Q0QxpRIE6E-NSQwKVMwpIl6nTKFLUCSb8',
@@ -116,11 +116,7 @@ export default function BraulioCarrillo() {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a href="/" className={styles.logo}>
-            <span className={styles.logoIcon}>🌿</span>
-            <div>
-              <span className={styles.logoMain}>Rainforest</span>
-              <span className={styles.logoSub}>Adventures</span>
-            </div>
+            <img src={LOGO} alt="Rainforest Adventures" className={styles.logoImg} />
           </a>
           <nav className={styles.nav}>
             <div className={styles.navItem}>
@@ -142,12 +138,10 @@ export default function BraulioCarrillo() {
         </div>
       </header>
 
-      {/* Hero with Video - Text Bottom Left */}
+      {/* Hero - Text Bottom Left */}
       <section className={styles.hero}>
-        <div className={styles.heroVideo}>
-          <video autoPlay muted loop playsInline>
-            <source src={VIDEO_URL} type="video/mp4" />
-          </video>
+        <div className={styles.heroImage}>
+          <img src={IMAGES.braulioCarrillo} alt="Braulio Carrillo, Costa Rica" />
           <div className={styles.heroOverlay} />
         </div>
         <div className={styles.heroContent}>
@@ -165,21 +159,27 @@ export default function BraulioCarrillo() {
       <section className={styles.features}>
         <div className={styles.featuresInner}>
           <div className={styles.feature}>
-            <span className={styles.featureIcon}>🌿</span>
+            <span className={styles.featureIcon}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z"/><path d="M5 19L15 9"/></svg>
+            </span>
             <div>
               <strong>BE ONE</strong>
               <span>WITH NATURE</span>
             </div>
           </div>
           <div className={styles.feature}>
-            <span className={styles.featureIcon}>⚡</span>
+            <span className={styles.featureIcon}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            </span>
             <div>
               <strong>FEEL THE</strong>
               <span>ADRENALINE</span>
             </div>
           </div>
           <div className={styles.feature}>
-            <span className={styles.featureIcon}>🔒</span>
+            <span className={styles.featureIcon}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            </span>
             <div>
               <strong>PAYMENT 100%</strong>
               <span>SECURED</span>
@@ -253,7 +253,9 @@ export default function BraulioCarrillo() {
                   <div className={styles.tourRequirements}>
                     {tour.requirements.map((req, i) => (
                       <div key={i} className={styles.requirement}>
-                        <span className={styles.reqIcon}>ℹ️</span>
+                        <span className={styles.reqIcon}>
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg>
+                        </span>
                         <span>{req}</span>
                       </div>
                     ))}
@@ -261,7 +263,9 @@ export default function BraulioCarrillo() {
                 )}
 
                 <div className={styles.tourTime}>
-                  <span className={styles.timeIcon}>⏰</span>
+                  <span className={styles.timeIcon}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  </span>
                   <span className={styles.timeLabel}>OPENING TIME</span>
                   <span className={styles.timeValue}>{tour.openingTime}</span>
                 </div>
@@ -340,11 +344,7 @@ export default function BraulioCarrillo() {
           <div className={styles.footerGrid}>
             <div className={styles.footerBrand}>
               <div className={styles.footerLogo}>
-                <span>🌿</span>
-                <div>
-                  <span>Rainforest</span>
-                  <span>Adventures</span>
-                </div>
+                <img src={LOGO} alt="Rainforest Adventures" className={styles.footerLogoImg} />
               </div>
               <p>
                 World-class eco-adventures in the most beautiful

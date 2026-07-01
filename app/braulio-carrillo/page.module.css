@@ -28,6 +28,13 @@
 
 .logoIcon { font-size: 2rem; }
 
+.logoImg {
+  height: 46px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
 .logoMain {
   display: block;
   font-family: var(--font-display);
@@ -119,12 +126,12 @@
   overflow: hidden;
 }
 
-.heroVideo {
+.heroImage {
   position: absolute;
   inset: 0;
 }
 
-.heroVideo video {
+.heroImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -731,6 +738,13 @@
 
 .footerLogo > span:first-child {
   font-size: 2rem;
+}
+
+.footerLogoImg {
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+  display: block;
 }
 
 .footerLogo > div {

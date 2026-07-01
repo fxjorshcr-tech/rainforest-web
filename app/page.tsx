@@ -1,5 +1,7 @@
 import styles from './page.module.css'
 
+const LOGO = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/rain-forest-logo-transp.png'
+
 const IMAGES = {
   hero: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_t7oyaht7oyaht7oy.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfdDdveWFodDdveWFodDdveS5wbmciLCJpYXQiOjE3Njc5ODk3MDQsImV4cCI6MTc5OTUyNTcwNH0.FcNzx1q5Q4Pyr-JTDzQLWHOseQUI4bpsOzV9f635V00',
   stMaarten: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_qtlr8hqtlr8hqtlr.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfcXRscjhocXRscjhocXRsci5wbmciLCJpYXQiOjE3Njc5ODk5NzUsImV4cCI6MTc5OTUyNTk3NX0.sAzAbP8JpjBvIJNdNlS0wPUuUyWhZLCu3H383YJ5L3g',
@@ -53,11 +55,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <a href="#" className={styles.logo}>
-            <span className={styles.logoIcon}>🌿</span>
-            <div>
-              <span className={styles.logoMain}>Rainforest</span>
-              <span className={styles.logoSub}>Adventures</span>
-            </div>
+            <img src={LOGO} alt="Rainforest Adventures" className={styles.logoImg} />
           </a>
 
           <nav className={styles.nav}>
@@ -226,28 +224,36 @@ export default function Home() {
 
               <div className={styles.expList}>
                 <div className={styles.expItem}>
-                  <div className={styles.expIcon}>⚡</div>
+                  <div className={styles.expIcon}>
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 5l18 4"/><circle cx="12" cy="7.1" r="1.6"/><path d="M12 8.7v3M12 11.7l-2.5 3M12 11.7l2.5 3"/></svg>
+                  </div>
                   <div>
                     <h4>Canopy Ziplines</h4>
                     <p>Soar through the treetops on world-class zipline courses</p>
                   </div>
                 </div>
                 <div className={styles.expItem}>
-                  <div className={styles.expIcon}>🚡</div>
+                  <div className={styles.expIcon}>
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M2 5l20 3.5"/><path d="M12 6.7V10"/><rect x="7" y="10" width="10" height="6.5" rx="1.5"/><path d="M7 13h10"/></svg>
+                  </div>
                   <div>
                     <h4>Aerial Tram</h4>
                     <p>Glide through the rainforest canopy in comfort</p>
                   </div>
                 </div>
                 <div className={styles.expItem}>
-                  <div className={styles.expIcon}>🌉</div>
+                  <div className={styles.expIcon}>
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9h20M5 9v6M19 9v6"/><path d="M4 12q8 6 16 0"/></svg>
+                  </div>
                   <div>
                     <h4>Hanging Bridges</h4>
                     <p>Walk among the treetops on suspension bridges</p>
                   </div>
                 </div>
                 <div className={styles.expItem}>
-                  <div className={styles.expIcon}>🦜</div>
+                  <div className={styles.expIcon}>
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z"/><path d="M5 19L15 9"/></svg>
+                  </div>
                   <div>
                     <h4>Wildlife Tours</h4>
                     <p>Discover exotic flora and fauna with expert guides</p>
@@ -328,21 +334,27 @@ export default function Home() {
             </div>
             <div className={styles.stripeFeatures}>
               <div className={styles.stripeFeature}>
-                <span className={styles.stripeFeatureIcon}>🔒</span>
+                <span className={styles.stripeFeatureIcon}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                </span>
                 <div>
                   <h4>256-bit Encryption</h4>
                   <p>Bank-level security</p>
                 </div>
               </div>
               <div className={styles.stripeFeature}>
-                <span className={styles.stripeFeatureIcon}>💳</span>
+                <span className={styles.stripeFeatureIcon}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
+                </span>
                 <div>
                   <h4>All Cards Accepted</h4>
                   <p>Visa, Mastercard, Amex</p>
                 </div>
               </div>
               <div className={styles.stripeFeature}>
-                <span className={styles.stripeFeatureIcon}>✓</span>
+                <span className={styles.stripeFeatureIcon}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+                </span>
                 <div>
                   <h4>Instant Confirmation</h4>
                   <p>Receive tickets by email</p>
@@ -359,11 +371,7 @@ export default function Home() {
           <div className={styles.footerGrid}>
             <div className={styles.footerBrand}>
               <div className={styles.footerLogo}>
-                <span>🌿</span>
-                <div>
-                  <span>Rainforest</span>
-                  <span>Adventures</span>
-                </div>
+                <img src={LOGO} alt="Rainforest Adventures" className={styles.footerLogoImg} />
               </div>
               <p>
                 World-class eco-adventures in the most beautiful
