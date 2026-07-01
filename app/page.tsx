@@ -1,6 +1,6 @@
 import styles from './page.module.css'
 
-const LOGO = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Gemini_Generated_Image_nlssx0nlssx0nlss-removebg-preview.png'
+const LOGO = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/rain-forest-logo-transp.png'
 
 const IMAGES = {
   hero: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_t7oyaht7oyaht7oy.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfdDdveWFodDdveWFodDdveS5wbmciLCJpYXQiOjE3Njc5ODk3MDQsImV4cCI6MTc5OTUyNTcwNH0.FcNzx1q5Q4Pyr-JTDzQLWHOseQUI4bpsOzV9f635V00',

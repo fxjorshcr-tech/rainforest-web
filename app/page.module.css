@@ -31,8 +31,9 @@
 }
 
 .logoImg {
-  height: 52px;
+  height: 46px;
   width: auto;
+  max-width: 100%;
   display: block;
 }
 
@@ -934,8 +935,9 @@
 }
 
 .footerLogoImg {
-  height: 56px;
+  height: 52px;
   width: auto;
+  max-width: 100%;
   display: block;
 }
 

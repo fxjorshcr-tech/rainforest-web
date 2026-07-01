@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import styles from './page.module.css'
 
-const LOGO = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/Gemini_Generated_Image_nlssx0nlssx0nlss-removebg-preview.png'
+const LOGO = 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/public/Fotos/rain-forest-logo-transp.png'
 
 const IMAGES = {
   braulioCarrillo: 'https://mmlbslwljvmscbgsqkkq.supabase.co/storage/v1/object/sign/PRUEBAS/Gemini_Generated_Image_ffc13effc13effc1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iZmNkZjM3My00NzkzLTRhYjQtYmRhOC04OWY1ZmNiMjdhMzciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQUlVFQkFTL0dlbWluaV9HZW5lcmF0ZWRfSW1hZ2VfZmZjMTNlZmZjMTNlZmZjMS5wbmciLCJpYXQiOjE3Njc5OTAyMTksImV4cCI6MTc5OTUyNjIxOX0.PNFoxQrn56Q0QxpRIE6E-NSQwKVMwpIl6nTKFLUCSb8',

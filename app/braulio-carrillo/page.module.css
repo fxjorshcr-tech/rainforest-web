@@ -29,8 +29,9 @@
 .logoIcon { font-size: 2rem; }
 
 .logoImg {
-  height: 48px;
+  height: 46px;
   width: auto;
+  max-width: 100%;
   display: block;
 }
 
@@ -740,8 +741,9 @@
 }
 
 .footerLogoImg {
-  height: 52px;
+  height: 48px;
   width: auto;
+  max-width: 100%;
   display: block;
 }
 
