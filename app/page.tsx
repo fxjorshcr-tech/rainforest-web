@@ -27,6 +27,7 @@ const destinations = [
     name: 'Braulio Carrillo',
     region: 'Costa Rica',
     image: IMAGES.braulioCarrillo,
+    link: '/braulio-carrillo',
   },
   {
     id: 'jaco',
@@ -120,7 +121,7 @@ export default function Home() {
           {/* Top Row - 2 cards */}
           <div className={styles.destRowTop}>
             {destinations.slice(0, 2).map((dest) => (
-              <a key={dest.id} href={`#${dest.id}`} className={styles.destCard}>
+              <a key={dest.id} href={'link' in dest ? dest.link : `#${dest.id}`} className={styles.destCard}>
                 <img src={dest.image} alt={dest.name} className={styles.destImage} />
                 <div className={styles.destGradient} />
                 <div className={styles.destInfo}>
@@ -134,7 +135,7 @@ export default function Home() {
           {/* Bottom Row - 3 cards */}
           <div className={styles.destRowBottom}>
             {destinations.slice(2).map((dest) => (
-              <a key={dest.id} href={`#${dest.id}`} className={styles.destCard}>
+              <a key={dest.id} href={'link' in dest ? dest.link : `#${dest.id}`} className={styles.destCard}>
                 <img src={dest.image} alt={dest.name} className={styles.destImage} />
                 <div className={styles.destGradient} />
                 <div className={styles.destInfo}>
